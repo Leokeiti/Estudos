@@ -1,0 +1,71 @@
+Para este projeto, usarei um container rodando a imagem de um banco de dados SQL
+
+1. Criar o Compose e o .env
+
+- Usar a .env para armazenar senha do DB:
+  MYSQL_ROOT_PASSWORD=root123
+  MYSQL_DATABASE=meu_banco
+  MYSQL_USER=usuario
+  MYSQL_PASSWORD=senha123
+
+- Criar o arquivo compose (docker-compose.yml)
+  services:
+    mysql:
+      image: mysql:8.0
+      container_name: mysql_local
+      restart: unless-stopped
+      env_file:
+        - .env
+      ports:
+        - "3306:3306"
+      volumes:
+        - mysql_data:/var/lib/mysql
+
+  volumes:
+    mysql_data:
+
+
+- Subir o container no bash
+  docker compose up -d      # subir
+  docker compose down       # parar e remover container
+  docker compose stop       # só pausar
+  docker compose logs mysql # ver logs
+
+- Acessar o banco de dados
+  docker exec -it mysql_local mysql -u usuario -p #acessar comandos sql a partir do terminal
+  docker exec -i mysql_local mysql -u usuario -p meu_banco < seu_arquivo.sql #enviar comandos a partir de arquivo
+
+- Comandos SQL
+
+  -- BANCOS
+  SHOW DATABASES;
+  USE meu_banco;
+
+  -- TABELAS
+  SHOW TABLES;
+  DESCRIBE usuarios;          -- ver estrutura de uma tabela
+
+  -- CRIAR TABELA
+  CREATE TABLE produtos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    preco DECIMAL(10,2),
+    estoque INT DEFAULT 0
+  );
+
+  -- INSERIR
+  INSERT INTO produtos (nome, preco, estoque) VALUES ('Notebook', 2999.90, 10);
+
+  -- CONSULTAR
+  SELECT * FROM produtos;
+  SELECT nome, preco FROM produtos WHERE preco > 1000;
+  SELECT * FROM produtos ORDER BY preco DESC;
+
+  -- ATUALIZAR
+  UPDATE produtos SET preco = 2799.90 WHERE id = 1;
+
+  -- DELETAR
+  DELETE FROM produtos WHERE id = 1;
+
+  -- DROPAR TABELA (cuidado!)
+  DROP TABLE produtos;

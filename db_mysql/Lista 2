@@ -1,0 +1,9 @@
+Bloco 2 — LAG e LEAD (~2h)
+Exercício 5 ⏱ 20min
+Para cada venda, mostre o valor da venda anterior do mesmo vendedor usando LAG(). A primeira venda de cada um deve aparecer com NULL.
+Exercício 6 ⏱ 30min
+Calcule a variação em reais entre cada venda e a anterior do mesmo vendedor. Ex: Ana vendeu 800 depois 600 → variação de -200.
+Exercício 7 ⏱ 35min
+Use LEAD() para mostrar, ao lado de cada venda, qual será o próximo valor que aquele vendedor vai vender. Útil para antecipar comportamento.
+Exercício 8 ⏱ 35min
+Classifique cada venda como 'subiu', 'caiu' ou 'primeira venda' comparando com a venda anterior do mesmo vendedor. Use CASE WHEN junto com LAG().

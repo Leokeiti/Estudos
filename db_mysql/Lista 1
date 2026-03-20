@@ -1,0 +1,9 @@
+Bloco 1 — RANK e ROW_NUMBER (~2h)
+Exercício 1 ⏱ 20min
+Liste todos os vendedores com seu total vendido e um ranking geral do maior para o menor. Use RANK().
+Exercício 2 ⏱ 25min
+Gere o mesmo ranking, mas agora separado por região. O vendedor top de cada região deve aparecer com rank 1.
+Exercício 3 ⏱ 30min
+Use ROW_NUMBER() para numerar cada venda de um vendedor em ordem cronológica. O resultado deve mostrar, por exemplo, que a venda do Ana em 05/01 foi a "venda número 1" dela, a de 10/01 foi a "número 2", etc.
+Exercício 4 ⏱ 35min
+Traga apenas a venda mais recente de cada vendedor usando ROW_NUMBER() + subconsulta. Dica: numere as vendas por vendedor ordenando por data decrescente, depois filtre onde o número = 1.

@@ -1,0 +1,6 @@
+Bloco 3 — Exercícios integradores (~2h)
+Exercício 9 ⏱ 40min
+Monte uma query que retorne, por vendedor: total vendido, rank geral, rank por região e variação entre a última e a penúltima venda. Tudo em uma única query.
+Exercício 10 ⏱ 50min
+Encontre os 2 melhores vendedores por região usando window function. Nenhum subgrupo deve ter mais de 2 nomes.
+Buffer ⏱ 30min — revisar os que travou, ou me mandar para feedback.
