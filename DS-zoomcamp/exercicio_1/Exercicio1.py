@@ -3,7 +3,7 @@
 
 # In[ ]:
 
-
+"""
 #Pandas version
 pd.__version__
 
@@ -52,7 +52,7 @@ xtx = x.T @ x #matrix-matrix multiplication with the transposed
 i_xtx = np.linalg.inv(xtx) #Calculating the inverse
 w.sum() #Sum of all elements of the matrix
 
-
+"""
 # In[ ]:
 
 
